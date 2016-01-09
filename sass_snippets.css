@@ -4,6 +4,14 @@ Make it easy!
 ====================================================
 */
 
+//import files
+@import 'partials/reset';
+@import 'partials/mixins';
+
+//variables
+$primary-color: #000;
+
+
 /* === vendored === */
 
 //mixin
@@ -27,3 +35,31 @@ Make it easy!
   -ms-transition: 320ms ease;
   -o-transition: 320ms ease;
   transition: 320ms ease; }
+
+
+/* === nested  === */
+
+//scss
+a {
+    font-family: sans-serif;
+    color: $primary-color;
+    &:hover,
+    &:focus,
+    &:active { color: blue; }
+    &.link-class { color: green;
+        &:hover,
+        &:focus,
+        &:active { color: black; }        
+    }
+}
+
+//output
+a {
+  font-family: sans-serif;
+  color: #000; }
+  a:hover, a:focus, a:active {
+    color: blue; }
+  a.link-class {
+    color: green; }
+    a.link-class:hover, a.link-class:focus, a.link-class:active {
+      color: black; }
